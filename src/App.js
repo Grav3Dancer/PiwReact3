@@ -76,14 +76,14 @@ function App() {
       </div>
       
       <nav>
-        <div><NavLink to="/" exact>Przeglądanie studentów</NavLink></div>
-        <div><NavLink to="/newStudent">Dodawanie nowego studenta</NavLink></div>
-        <div><NavLink to="/groups">Przeglądanie grup</NavLink></div>
-        <div><NavLink to="/newGroup">Dodawanie nowej grupy</NavLink></div>
+        <div><NavLink to="/PiwReact2/" exact>Przeglądanie studentów</NavLink></div>
+        <div><NavLink to="/PiwReact2/newStudent">Dodawanie nowego studenta</NavLink></div>
+        <div><NavLink to="/PiwReact2/groups">Przeglądanie grup</NavLink></div>
+        <div><NavLink to="/PiwReact2/newGroup">Dodawanie nowej grupy</NavLink></div>
       </nav>
       
       <Switch>
-        <Route path="/" exact>
+        <Route path="/PiwReact2/" exact>
           <div className="mainDiv">
             <SearchStudent tagSearch={tagSearch} descSearch={descSearch} setTagSearch={setTagSearch} setDescSearch={setDescSearch} />
             <SearchInfo amount={foundStudents} />
@@ -93,7 +93,7 @@ function App() {
           </div>
           </Route>
           
-          <Route path="/groups">
+          <Route path="/PiwReact2/groups">
           <div className="mainDiv">
             <SearchGroup tagSearch={tagSearchGrp} descSearch={descSearchGrp} setTagSearch={setTagSearchGrp} setDescSearch={setDescSearchGrp} />
             <GroupSearchInfo amount={foundGroups} />
@@ -103,14 +103,14 @@ function App() {
           </div>
         </Route>
 
-        <Route path="/newStudent">
+        <Route path="/PiwReact2/newStudent">
           <div className="addDiv">
             <h2>Dodaj nowego studenta</h2>
             <NewStudent addStudent={addStudent} />
           </div>
         </Route>
 
-        <Route path="/newGroup">
+        <Route path="/PiwReact2/newGroup">
           <div className="addDiv">
             <h2>Dodaj nową grupę</h2>
             <NewGroup addGroup={addGroup} />
