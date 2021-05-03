@@ -17,6 +17,16 @@ body{
   }
 }
 
+a{
+  text-decoration: none;
+  min-width: 300px;
+  
+}
+
+.active {
+  background-color:rgb(165, 165, 190);
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -51,7 +61,7 @@ body{
 }
 
 .AddBorder{
-  background-color: rgb(225, 233, 255);
+  background-color: rgb(165, 165, 190);
   width: 22%;
   border-style: inset;
   border-width: 5px;
@@ -61,8 +71,8 @@ body{
 
 .addDiv{
   position: absolute;
-  top: 5%;
-  right: 7%;
+  top: 37%;
+  left: 35%
 }
 
 .logocss{
