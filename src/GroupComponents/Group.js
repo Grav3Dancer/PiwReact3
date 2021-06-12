@@ -5,6 +5,7 @@ function Group(props) {
     return (
         <div className='StudentBorder'>
             <h3>{props.name} - Rozmiar grupy: {props.size}</h3>
+            <p>{props.username}</p>
             <div>
                 <div>
                     <p>{props.desc}</p>

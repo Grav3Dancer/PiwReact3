@@ -1,9 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import Group from "./Group";
+import {getAllGroups} from "../Firebase";
 
 function GroupList(props) {
 
     const [searchedList, setSearchedList] = useState(props.ListOfGroups);
+
+    function formatTags(elem)
+    {
+        elem.tags = elem.tags.toLowerCase().split(" ");
+    }
+
+    useEffect(()=>{
+        const getData = async () => {
+            const groupsData = await getAllGroups();
+
+            let groupsArray = [];
+
+            groupsData.forEach((doc) => {
+                groupsArray.push(doc.data());
+            });
+            groupsArray.forEach(formatTags);
+            props.setGroups(groupsArray);
+
+        };
+
+        getData();
+    }, []);
 
     useEffect(() => {
         setSearchedList(
@@ -31,7 +54,7 @@ function GroupList(props) {
     return (
         <div>
             {searchedList.map((group) => (
-                <Group key={group.name} name={group.name} size={group.size} desc={group.desc} tags={group.tags} />
+                <Group key={group.name} name={group.name} size={group.size} username={group.username} desc={group.desc} tags={group.tags} />
             ))}
         </div>
     );

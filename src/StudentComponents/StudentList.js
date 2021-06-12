@@ -1,9 +1,33 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from "uuid";
+import { getAllStudents, addNewStudent } from '../Firebase';
 import Student from "./Student";
 
 function StudentList(props) {
 
     const [searchedList, setSearchedList] = useState(props.ListOfStudents);
+
+    function formatTags(elem)
+    {
+        elem.tags = elem.tags.toLowerCase().split(" ");
+    }
+
+    useEffect(()=>{
+        const getData = async () => {
+            const studentsData = await getAllStudents();
+
+            let studentsArray = [];
+
+            studentsData.forEach((doc) => {
+                studentsArray.push(doc.data());
+            });
+            studentsArray.forEach(formatTags);
+            props.setStudents(studentsArray);
+
+        };
+
+        getData();
+    }, []);
 
     useEffect(() => {
         setSearchedList(
@@ -31,7 +55,7 @@ function StudentList(props) {
     return (
         <div>
             {searchedList.map((student) => (
-                <Student key={student.surname} name={student.name} surname={student.surname} desc={student.desc} tags={student.tags} />
+                <Student key={uuidv4()} name={student.name} surname={student.surname} username={student.username} desc={student.desc} tags={student.tags} />
             ))}
         </div>
     );

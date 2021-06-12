@@ -111,3 +111,17 @@ textarea{
   top: 0%;
   font-size: 6pt;
 }
+
+.signL{
+  position: absolute;
+  right: 1%;
+  top: 2%;
+  font-size: 16pt;
+}
+
+.signLB{
+  position: absolute;
+  right: 1%;
+  top: 6%;
+  font-size: 16pt;
+}

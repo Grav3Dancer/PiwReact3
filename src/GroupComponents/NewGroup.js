@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {Form} from "react-bootstrap";
+import { addNewGroup } from '../Firebase';
+import UserContext from '../UserContext';
 
 const NewGroup = ({ addGroup }) => {
 
@@ -7,6 +9,8 @@ const NewGroup = ({ addGroup }) => {
     const [sizeInput, setSizeInput] = useState("");
     const [descInput, setDescInput] = useState("");
     const [tagsInput, setTagsInput] = useState("");
+
+    const {logged, setLogged} = useContext(UserContext);
 
     function clear() {
         setNameInput("");
@@ -31,7 +35,7 @@ const NewGroup = ({ addGroup }) => {
             tags: tagsInput.toLowerCase().split(" "),
         };
 
-        addGroup(newGroupData);
+        addNewGroup(nameInput, sizeInput, logged, descInput, tagsInput);
 
         clear();
 

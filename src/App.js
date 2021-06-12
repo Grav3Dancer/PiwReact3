@@ -11,42 +11,55 @@ import NewGroup from "./GroupComponents/NewGroup";
 import SearchGroup from "./GroupComponents/SearchGroup";
 import GroupSearchInfo from "./GroupComponents/GroupSearchInfo";
 
+import Login from "./Login";
+import Logout from './Logout';
+import Navs from './Navs';
+import Register from './Register';
+import { getAllStudents, addNewStudent } from "./Firebase";
+
 import logo from "./myLogoo.png";
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
 
+import UserContext from './UserContext';
+
 function App() {
   const [students, setStudents] = useState([
-    {
+    /*{
       name: "Michał",
       surname: "Skrok",
+      username: "Grav3",
       desc: "Czasem nie wiem co robię, ale google przychodzi z pomocą. Lubię gry, samochody i koty.",
       tags: ["c++", "java", "sql"],
     },
     {
-      name: "Alicja",
       surname: "Zmyślona",
+      name: "Alicja",
+      username: "AliceMadeUp",
       desc: "Studiuję na wydziale budownictwa, chętnie pomagam każdemu w potrzebie :) Budownictwo fajna sprawa, beton, cement i zaprawa :o",
       tags: ["cad", "psb", "statyka_budowlana", "c++"],
     },
     {
       name: "Jan",
       surname: "Kowalski",
+      username: "JK200",
       desc: "Cześć! Jestem Janek, studiuję na 3-cim roku informatyki," +
         " uwielbiam grafikę i ogólnie pojęte tworzenie stron i aplikacji webowych. Chętnie dołączę się do ciekawych projektów :)",
       tags: ["java", "html", "javascript", "react", "frontend"],
-    },
+    },*/
   ]);
 
   const [groups, setGroups] = useState([
     {
       name: "Projekt Zespołowy",
       size: "4",
+      username: "grav3",
       desc: "Grupa wykonująca aplikację do wideokonferencji w ramach projektu zespołowego",
       tags: ["kotlin", "java", "sql", "angular"],
     },
     {
       name: "UCiSW 2",
       size: "2",
+      username: "admin11",
       desc: "Projekt z układów cyfrowych - przesyłanie znaków dźwiękowo kodem morse'a",
       tags: ["ucisw_2", "vhdl", "kabelki"],
     },
@@ -68,19 +81,18 @@ function App() {
   const [descSearch, setDescSearch] = useState("");
   const [foundStudents, setFoundStudents] = useState("");
 
+  const [logged, setLogged] = useState("Nie zalogowano");
+
+
   return (
+    <UserContext.Provider value={{logged, setLogged}}>
     <Router>
       <div className="logocss">
         <h1><img src={logo} alt="logoApki"></img></h1>
         <h3>Wyszukiwarka najlepszych studentów i grup<br /> do TWOJEGO projektu</h3>
       </div>
       
-      <nav>
-        <div><NavLink to="/PiwReact2/" exact>Przeglądanie studentów</NavLink></div>
-        <div><NavLink to="/PiwReact2/newStudent">Dodawanie nowego studenta</NavLink></div>
-        <div><NavLink to="/PiwReact2/groups">Przeglądanie grup</NavLink></div>
-        <div><NavLink to="/PiwReact2/newGroup">Dodawanie nowej grupy</NavLink></div>
-      </nav>
+      <Navs/>
       
       <Switch>
         <Route path="/PiwReact2/" exact>
@@ -88,7 +100,7 @@ function App() {
             <SearchStudent tagSearch={tagSearch} descSearch={descSearch} setTagSearch={setTagSearch} setDescSearch={setDescSearch} />
             <SearchInfo amount={foundStudents} />
             <div className="listDiv">
-              <StudentList ListOfStudents={students} tagToSearchFor={tagSearch} descToSearchFor={descSearch} setFoundStudents={setFoundStudents} />
+              <StudentList setStudents={setStudents} addStudent={addStudent} ListOfStudents={students} tagToSearchFor={tagSearch} descToSearchFor={descSearch} setFoundStudents={setFoundStudents} />
             </div>
           </div>
           </Route>
@@ -98,15 +110,22 @@ function App() {
             <SearchGroup tagSearch={tagSearchGrp} descSearch={descSearchGrp} setTagSearch={setTagSearchGrp} setDescSearch={setDescSearchGrp} />
             <GroupSearchInfo amount={foundGroups} />
             <div className="listDiv">
-              <GroupList ListOfGroups={groups} tagToSearchFor={tagSearchGrp} descToSearchFor={descSearchGrp} setFoundGroups={setFoundGroups} />
+              <GroupList setGroups={setGroups} ListOfGroups={groups} tagToSearchFor={tagSearchGrp} descToSearchFor={descSearchGrp} setFoundGroups={setFoundGroups} />
             </div>
           </div>
         </Route>
 
         <Route path="/PiwReact2/newStudent">
           <div className="addDiv">
-            <h2>Dodaj nowego studenta</h2>
+            <h2>Rejestracja</h2>
             <NewStudent addStudent={addStudent} />
+          </div>
+        </Route>
+
+        <Route path="/PiwReact2/Login">
+          <div>
+            <h2>Zaloguj się</h2>
+            <Login />
           </div>
         </Route>
 
@@ -123,7 +142,10 @@ function App() {
       </Switch>
 
       <p className="signP">Made by Michał Skrok, 248827</p>
+      <h3 className="signLB"><Logout/></h3>
+      <h3 className="signL">{logged}</h3>
     </Router>
+    </UserContext.Provider>
   );
 }
 

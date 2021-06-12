@@ -5,6 +5,7 @@ function Student(props) {
     return (
         <div className='StudentBorder'>
             <h3>{props.name} {props.surname}</h3>
+            <p>{props.username}</p>
             <div>
                 <div>
                     <p>{props.desc}</p>
