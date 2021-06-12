@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/PiwReact3/static/css/main.9589d139.chunk.css",
+    "main.js": "/PiwReact3/static/js/main.6d65a482.chunk.js",
+    "main.js.map": "/PiwReact3/static/js/main.6d65a482.chunk.js.map",
+    "runtime-main.js": "/PiwReact3/static/js/runtime-main.101b436d.js",
+    "runtime-main.js.map": "/PiwReact3/static/js/runtime-main.101b436d.js.map",
+    "static/js/2.08ee8711.chunk.js": "/PiwReact3/static/js/2.08ee8711.chunk.js",
+    "static/js/2.08ee8711.chunk.js.map": "/PiwReact3/static/js/2.08ee8711.chunk.js.map",
+    "static/js/3.7951a5dd.chunk.js": "/PiwReact3/static/js/3.7951a5dd.chunk.js",
+    "static/js/3.7951a5dd.chunk.js.map": "/PiwReact3/static/js/3.7951a5dd.chunk.js.map",
+    "index.html": "/PiwReact3/index.html",
+    "static/css/main.9589d139.chunk.css.map": "/PiwReact3/static/css/main.9589d139.chunk.css.map",
+    "static/js/2.08ee8711.chunk.js.LICENSE.txt": "/PiwReact3/static/js/2.08ee8711.chunk.js.LICENSE.txt",
+    "static/media/myLogoo.db42603d.png": "/PiwReact3/static/media/myLogoo.db42603d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.101b436d.js",
+    "static/js/2.08ee8711.chunk.js",
+    "static/css/main.9589d139.chunk.css",
+    "static/js/main.6d65a482.chunk.js"
+  ]
+}
