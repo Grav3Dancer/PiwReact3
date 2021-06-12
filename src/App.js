@@ -95,7 +95,7 @@ function App() {
       <Navs/>
       
       <Switch>
-        <Route path="/PiwReact2/" exact>
+        <Route path="/PiwReact3/" exact>
           <div className="mainDiv">
             <SearchStudent tagSearch={tagSearch} descSearch={descSearch} setTagSearch={setTagSearch} setDescSearch={setDescSearch} />
             <SearchInfo amount={foundStudents} />
@@ -105,7 +105,7 @@ function App() {
           </div>
           </Route>
           
-          <Route path="/PiwReact2/groups">
+          <Route path="/PiwReact3/groups">
           <div className="mainDiv">
             <SearchGroup tagSearch={tagSearchGrp} descSearch={descSearchGrp} setTagSearch={setTagSearchGrp} setDescSearch={setDescSearchGrp} />
             <GroupSearchInfo amount={foundGroups} />
@@ -115,21 +115,21 @@ function App() {
           </div>
         </Route>
 
-        <Route path="/PiwReact2/newStudent">
+        <Route path="/PiwReact3/newStudent">
           <div className="addDiv">
             <h2>Rejestracja</h2>
             <NewStudent addStudent={addStudent} />
           </div>
         </Route>
 
-        <Route path="/PiwReact2/Login">
+        <Route path="/PiwReact3/Login">
           <div>
             <h2>Zaloguj się</h2>
             <Login />
           </div>
         </Route>
 
-        <Route path="/PiwReact2/newGroup">
+        <Route path="/PiwReact3/newGroup">
           <div className="addDiv">
             <h2>Dodaj nową grupę</h2>
             <NewGroup addGroup={addGroup} />

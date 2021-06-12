@@ -12,17 +12,17 @@ const Navs = () => {
     {
     return (
         <nav>
-        <div><NavLink to="/PiwReact2/" exact>Przeglądanie studentów</NavLink></div>
-        <div><NavLink to="/PiwReact2/groups">Przeglądanie grup</NavLink></div>
-        <div><NavLink to="/PiwReact2/Login">Logowanie</NavLink></div>
-        <div><NavLink to="/PiwReact2/newStudent">Rejestracja</NavLink></div>
+        <div><NavLink to="/PiwReact3/" exact>Przeglądanie studentów</NavLink></div>
+        <div><NavLink to="/PiwReact3/groups">Przeglądanie grup</NavLink></div>
+        <div><NavLink to="/PiwReact3/Login">Logowanie</NavLink></div>
+        <div><NavLink to="/PiwReact3/newStudent">Rejestracja</NavLink></div>
       </nav>
     );
     } else return (
         <nav>
-        <div><NavLink to="/PiwReact2/" exact>Przeglądanie studentów</NavLink></div>
-        <div><NavLink to="/PiwReact2/groups">Przeglądanie grup</NavLink></div>
-        <div><NavLink to="/PiwReact2/newGroup">Dodawanie nowej grupy</NavLink></div>
+        <div><NavLink to="/PiwReact3/" exact>Przeglądanie studentów</NavLink></div>
+        <div><NavLink to="/PiwReact3/groups">Przeglądanie grup</NavLink></div>
+        <div><NavLink to="/PiwReact3/newGroup">Dodawanie nowej grupy</NavLink></div>
       </nav>
     );
 }
