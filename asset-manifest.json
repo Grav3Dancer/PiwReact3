@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/PiwReact3/static/css/main.9589d139.chunk.css",
-    "main.js": "/PiwReact3/static/js/main.6d65a482.chunk.js",
-    "main.js.map": "/PiwReact3/static/js/main.6d65a482.chunk.js.map",
+    "main.js": "/PiwReact3/static/js/main.e9e7fbd6.chunk.js",
+    "main.js.map": "/PiwReact3/static/js/main.e9e7fbd6.chunk.js.map",
     "runtime-main.js": "/PiwReact3/static/js/runtime-main.101b436d.js",
     "runtime-main.js.map": "/PiwReact3/static/js/runtime-main.101b436d.js.map",
     "static/js/2.08ee8711.chunk.js": "/PiwReact3/static/js/2.08ee8711.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.101b436d.js",
     "static/js/2.08ee8711.chunk.js",
     "static/css/main.9589d139.chunk.css",
-    "static/js/main.6d65a482.chunk.js"
+    "static/js/main.e9e7fbd6.chunk.js"
   ]
 }
